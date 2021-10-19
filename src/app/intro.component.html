@@ -1,0 +1,33 @@
+<div class="profile-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="container">
+                <div class="content-center">
+                    <div class="profile-image">
+                        <a href="#">
+                            <img src="assets/images/foto.jpg" alt="Image" />
+                        </a>
+                    </div>
+                    <div class="messageContacts" *ngFor="let element of contactsElement; let i = index">
+                        <div *ngIf="messageHover[i]">
+                            {{ element.message }}
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <section>
+                <div class="container">
+                    <div class="button-container">
+                        <a *ngFor="let element of contactsElement; let i = index" (mouseenter)="showElement(i)"
+                            (mouseleave)="hiddenElement(i)" class="btn btn-default btn-lg btn-icon" rel="tooltip"
+                            title="{{ element.title}}">
+                            <i class="{{ element.classIcon }}"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
