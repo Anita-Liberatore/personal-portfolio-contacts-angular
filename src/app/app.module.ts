@@ -6,6 +6,7 @@ import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { IntroComponent } from './intro.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const config: ExtraOptions = {
     RouterModule.forRoot(routes, config),
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
